@@ -1,0 +1,11 @@
+{
+  "name": "grafana-echarts-panel-template",
+  "description": "a template panel by echarts for grafana v7",
+  "main": "src/main.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {}
+}
