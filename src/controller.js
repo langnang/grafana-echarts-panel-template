@@ -2,6 +2,7 @@ import { MetricsPanelCtrl } from "app/plugins/sdk";
 import _ from "lodash";
 import kbn from "app/core/utils/kbn";
 import echarts from "./libs/echarts.min";
+import moment from "moment";
 import * as echarts_demos from "./demos";
 import "./libs/dark";
 import "./style.css!";
@@ -24,7 +25,7 @@ export class Controller extends MetricsPanelCtrl {
       url: "",
       method: "POST",
       upInterval: 60000,
-      format: "Year",
+      format: "YYYY/MM/DD",
       demo: "Line",
       demos: demos,
       option: {},
@@ -56,7 +57,9 @@ export class Controller extends MetricsPanelCtrl {
       this.panel.option = {
         xAxis: {
           //   type: "time",
-          data: dataList[0].datapoints.slice(0, 100).map((v) => v[1]),
+          data: dataList[0].datapoints
+            .slice(0, 100)
+            .map((v) => moment(v[1]).format(this.panel.format)),
         },
         yAxis: {
           type: "value",

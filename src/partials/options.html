@@ -9,7 +9,13 @@
                     ng-change="ctrl.refresh()"></select>
             </div>
         </div>
-
+        <div class="gf-form">
+            <label class="gf-form-label width-7">Format</label>
+            <div class="gf-form-select-wrapper">
+                <select class="gf-form-input" ng-model="ctrl.panel.format"
+                    ng-options="i for i in ['YYYY/MM/DD','HH:mm:ss']" ng-change="ctrl.refresh()"></select>
+            </div>
+        </div>
     </div>
 
 </div>

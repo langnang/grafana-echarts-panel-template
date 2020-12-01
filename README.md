@@ -1,6 +1,6 @@
 # Panel Template by Echarts for Grafana
 
-基于 Angular+Echarts 的 panel 开发
+Grafana 之基于 Echarts 的面板模板
 
 ## Development
 
@@ -36,7 +36,7 @@
 }
 ```
 
-- src/module.js
+- src/module.js | 入口文件
 
 ```js
 loadPluginCss({
@@ -45,21 +45,14 @@ loadPluginCss({
 });
 ```
 
-- src/controller.js
+- src/controller.js | 控制代码
 
 ```js
 onInitEditMode() {
-    this.addEditorTab('Option', 'public/plugins/${panel.id}/partials/options.html', 2);
+  // 页面样式路径
+  this.addEditorTab('Option', 'public/plugins/${panel.id}/partials/options.html', 2);
 }
 ```
-
-> 控制代码修改于 src/controller.js
->
-> package.json `"main": "src/module.js"` ->module.js `import {Controller} from './controller';`
->
-> 页面样式修改于 src/partials/options.html
->
-> controller.js `onInitEditMode() {this.addEditorTab('Option', 'public/plugins/empty-panel/partials/options.html', 2);}` ->options.html
 
 ### controller.js 代码运行机制
 
